@@ -1,6 +1,6 @@
 A simple Hello World app written in Python Flask.
 
-Contains sinagle-stage and multi-stage Dockerfiles.
+Contains single-stage and multi-stage Dockerfiles.
 
 Build and run using any dockerfile:
 
