@@ -1,0 +1,16 @@
+#an ansible script in yml to intall nginx and check whether nginx is running on remote server.
+#Author : Ekagra Varma
+---
+- name: Install Nginx
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install Nginx applocation
+      apt:
+        name: nginx
+        state: present
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
