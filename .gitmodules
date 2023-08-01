@@ -1,0 +1,3 @@
+[submodule "AWSDemo"]
+	path = AWSDemo
+	url = https://github.com/ekagravarma/devops.git
