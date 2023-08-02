@@ -1,0 +1,8 @@
+-
+  name: "creating a file"
+  hosts: server
+  tasks:
+        - 
+          name: "create a file"
+          command: "touch /home/ekagra1/Desktop/Kub8s/Ansible_handsOn/1st_Ansible_Script/new_playbook/new_txt_file.txt"
+
