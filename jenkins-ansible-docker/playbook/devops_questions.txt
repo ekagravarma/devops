@@ -1,0 +1,99 @@
+1. What are the roles and responsibilities of DevOps engineer?
+Ans.    Some works are :
+        Write, manage, and maintain infrastructure code using tools like Terraform, Ansible  to automate the provisioning and configuration of infrastructure resources.
+        Creating and maintaining CI/CD pipelines for  testing, and deployment of code changes.
+        Managing version control systems like Git to track changes .
+        Working with Docker and Kubernetes to deploy and manage applications.
+        Identify repetitive manual tasks and automate them to improve efficiency and reduce human error.
+
+2. What is the use of SSH?
+Ans.    SSH means Secure shell . It is primarily used for securely logging into remote servers and devices over a network.
+        It includes tools like SCP (Secure Copy Protocol) and SFTP (SSH File Transfer Protocol) for securely transferring files between local and remote systems.
+        Developers use SSH for secure access to version control systems like Git. SSH keys can be used to authenticate and authorize users for Git.
+        SSH can be used to create secure tunnels for remote desktop access (e.g., using VNC or RDP) to protect sensitive graphical data during transmission.
+
+3. What are the best practices we need to follow using SSH?
+Ans.    Using SSH keys for authentication instead of passwords. 
+        Disabling password authentication and relying solely on SSH keys for authentication. 
+        Using SSH protocol version 2, as it is more secure than the older version 1.
+        Regularly update the SSH software on both the client and server sides .
+        Enabling two-factor authentication for SSH access. This adds an extra layer of security by requiring an additional verification method, such as a one-time code from a mobile app or hardware token
+
+4. What is Continuous Integration (CI)?
+        Continuous Integration (CI) is a software development practice that focuses on regularly and automatically integrating code changes from multiple contributors into a shared repository. 
+        The primary goal of CI is to detect and address integration issues early in the development process, ensuring that code changes do not introduce defects or conflicts with existing code.
+        CI systems automatically build the application and tests (unit tests, integration tests, and sometimes even user acceptance tests) whenever code changes are pushed.
+        If a test fails or if there are integration issues, developers are alerted, and they can quickly address the issues.
+        CI pipelines often produce deployable artifacts, such as compiled binaries, container images, or installation packages. These artifacts are ready for deployment to various environments, such as development, staging, or production.
+        CI helps accelerate the development process by catching and fixing issues early, reducing the time spent on debugging and manual testing.
+
+5. What are antipatterns of DevOps?
+        DevOps requires a cultural shift towards shared responsibility, collaboration, and automation. Failing to foster this cultural change is an anti-pattern that can hinder the adoption of DevOps practices.
+        Not collecting and acting on feedback from production
+
+6. What are the various branching strategies used in the version control system?
+        Feature Branching: In this strategy, each new feature or user story gets its own dedicated branch. 
+        Release Branching: A release branch is created when a stable version of the software is nearing completion. This branch is used for final testing, bug fixes, and preparing the release.
+        Hotfix Branching: Hotfix branches are created to address critical issues or bugs in the production environment. They are typically branched off the main branch, and once the hotfix is ready, it's merged both into the main branch and the current release branch .
+
+
+7. What are Containers and what does OCI stands for?
+        A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing. 
+        OCI stands for Open Container Initiative. It specifies how images should be built and distributed. Container images following this specification are often referred to as "OCI-compliant" images.  It standardizes how containers are started, stopped, and managed. 
+
+8. What is the difference between horizontal Scaling and vertical scaling? Explain use cases for each where one is recommended and the other is not.
+        Horizontal Scaling (Scaling Out): It involves adding more machines or instances to your existing infrastructure. 
+        One distributes the workload across multiple servers or virtual machines.
+        It can be used for web applications that experience varying levels of traffic. As demand increases, one can add more web server instances to distribute incoming requests. In a microservices-based architecture, One can horizontally scale individual microservices independently to accommodate different workloads.
+        
+        Vertical Scaling (Scaling Up): It involves increasing the capacity of a single server or instance by adding more resources, such as CPU, RAM, or storage. One makes existing server more powerful.
+        Older monolithic applications that are not designed for horizontal scaling may benefit from vertical scaling when facing performance bottlenecks.
+        Vertical scaling can be useful for database servers that require more CPU, memory, or storage capacity as the data volume grows.
+
+9. What is the concept behind sudo in Linux OS?
+        sudo, which stands for "superuser do," is a command  used in Unix-like operating systems,It provides a way to give administrative authority to regular users. This authorization is defined in the sudoers file, located at /etc/sudoers.
+
+10. Can you explain the architecture of Jenkins?
+        Jenkins architecture comprises several key components:
+        Jenkins Master: It manages job scheduling, distribution, and monitoring. The master's web-based user interface allows users to configure jobs, view build logs, and access Jenkins features.
+        Jenkins Agents: Jenkins agents are worker nodes responsible for executing build and automation tasks.
+        Job Configuration: Job configurations specify build steps, source code repositories, build triggers, and post-build actions.
+        Plugins: Plugins are installed and configured to add features such as integration with source control systems, build tools, deployment platforms, and reporting.
+        Build Artifacts: Jenkins stores build artifacts generated by build jobs, such as compiled binaries, packages, and test results.
+        Build Triggers: Jenkins supports various triggers, such as polling a version control system (VCS) for changes, webhook-based triggers, or manual initiation by users.
+
+11. What is Blue/Green Deployment Pattern?
+        A blue/green deployment Pattern is a deployment strategy in which you create two separate, but identical environments. One environment (blue) is running the current application version and one environment (green) is running the new application version. Using a blue/green deployment strategy increases application availability and reduces deployment risk by simplifying the rollback process if a deployment fails. Once testing has been completed on the green environment, live application traffic is directed to the green environment and the blue environment is deprecated.
+
+12. What is Canary deployment pattern?
+        Canary Deployments is a deployment pattern that rolls out the changes to a limited set of users before doing it for 100%.
+        Canary deployments are implemented through a setup where a few servers serve the newer version while the reset serves the old version.
+        A router (load balancer / API gateway) is placed in front of the setup and it routes some traffic to the new fleet while the other requests continue to go to the old one.some pros are - we test our changes on real traffic,rollbacks are much faster , if something's wrong only a fraction of users are affected ,zero downtime deployments
+
+13. Explain 6 Load Balancing Algorithms?
+        Round Robin :Requests are distributed across the group of servers sequentially.
+        Least Connections : A new request is sent to the server with the fewest current connections to clients. The relative computing capacity of each server is factored into determining which one has the least connections.
+        Least Time : Sends requests to the server selected by a formula that combines the fastest response time and fewest active connections.
+        Hash : Distributes requests based on a key you define, such as the client IP address or the request URL.
+        IP Hash : The IP address of the client is used to determine which server receives the request.
+        Weighted Least Connections: It combines the Least Connections algorithm with server weights. Servers with lower connections and higher weights receive more requests.
+
+14. Explain the difference between Monorepo and Polyrepo?
+        Monorepo  means "using one repository for the source code management version control system". A monorepo architecture means using one repository, rather than multiple repositories.
+        Polyrepo means "using multiple repostories for the source code management version control system". A polyrepo architecture means using multiple repositories, rather than one repository.
+
+15. List down ways to speed up the API performance?
+        Cache Requests :Caching improve API performance. If you have requests that frequently produce the same response, a cached version of the response avoids excessive database queries. 
+        Database Optimization: Optimizing database queries and indexes to reduce query execution times. 
+        Load Balancing:Using load balancers to distribute incoming API requests across multiple servers or instances. 
+        API Caching Headers: Implementing caching headers like "ETag" and "Last-Modified" to allow clients to cache responses locally and reduce the need for server requests.
+        Connection Keep-Alive: Enabling HTTP keep-alive to reuse connections between the client and server, reducing the overhead of establishing a new connection for each request.
+
+16. Please design Architecture using two most-used Distributed System Pattern.
+
+        We will create a system for processing and analyzing real-time data from various sources. The system will be designed to handle high throughput and scalability while maintaining modularity and fault tolerance.
+        Microservices Architecture:The Microservices Architecture pattern divides the system into a collection of small, loosely coupled services, each responsible for a specific business capability. This pattern promotes flexibility, scalability, and ease of maintenance.
+        Message Queues and Publish-Subscribe Pattern:The Message Queues and Publish-Subscribe Pattern involves using message brokers to decouple producers and consumers of data. In this architecture, we'll use Apache Kafka as the message broker.
+        By combining the Microservices Architecture with the Message Queues and Publish-Subscribe Pattern, this distributed system can efficiently handle real-time data processing, analytics, and notifications while offering flexibility, scalability, and fault tolerance. Proper monitoring and logging are essential to ensure the system's health and performance. 
+
+    
